@@ -4,7 +4,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-
+    max-width: 80rem;
+    max-height: max-content;
+    cursor: pointer;
     .key-box {
         background-color: color.$Primary;
         width: 5rem;
@@ -12,11 +14,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 30px;
-        transition: width height;
+        border-radius: 1rem;
+        transition: all 0.8s;
 
         p {
             color: color.$Text;
+            font-size: 2rem;
         }
 
         &:hover {

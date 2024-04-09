@@ -5,12 +5,13 @@ type ButtonProps = {
     text?: string;
     smallCircle?: boolean;
     svg?: JSX.Element;
+    onHandleClick: () => void;
 }
 
-const Button = ({ menu, text, smallCircle, svg }: ButtonProps) => {
+const Button = ({ menu, text, smallCircle, svg, onHandleClick }: ButtonProps) => {
     return (
         <>
-            <button className={`button${menu ? " menu" : ""} ${smallCircle ? "smallCircle" : "bigCircle"}`}>{svg} {text}</button>
+            <button onClick={onHandleClick} className={`button ${menu ? "menu" : smallCircle ? "smallCircle" : "bigCircle"}`}>{svg} {text?.toUpperCase()}</button>
         </>
     )
 }

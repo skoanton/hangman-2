@@ -2,7 +2,8 @@
 
 .button {
   border: none;
-
+  background-color: color.$Secondary;
+  font-size: 1.25rem;
   &:hover{
     background-color: color.$Accent;
   }
@@ -12,19 +13,34 @@
   border-radius: 50%;
   height: 2rem;
   width: 2rem;
-  background-color: color.$Secondary;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+
+  &:hover{
+    height: 2.5rem;
+    width: 2.5rem;
+  }
 }
 
 .bigCircle {
-
   border-radius: 50%;
   height: 5rem;
   width: 5rem;
-  background-color: color.$Secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+
+  &:hover{
+    height: 5.5rem;
+    width: 5.5rem;
+  }
 }
 
 .menu {
-  width: 10rem;
-  height: 5rem;
+  border-radius: 10px;
+  width: 15rem;
+  height: 2.25rem;
 }

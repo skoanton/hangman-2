@@ -2,8 +2,13 @@
 @use "./colors" as color;
 
 body {
-    font-family: font.$Font-Family;
     background-color: color.$Background;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    font-family: font.$Font-Family;
 }
