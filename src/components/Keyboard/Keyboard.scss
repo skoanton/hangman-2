@@ -1,0 +1,32 @@
+@use "../../styles/colors" as color;
+
+.Keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .key-box {
+        background-color: color.$Primary;
+        width: 5rem;
+        height: 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        transition: width height;
+
+        p {
+            color: color.$Text;
+        }
+
+        &:hover {
+            background-color: color.$Third;
+            height: 6.5rem;
+            width: 5.5rem;
+        }
+
+
+    }
+
+
+}

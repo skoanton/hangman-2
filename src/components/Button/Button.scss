@@ -1,0 +1,30 @@
+@use "../../styles/colors" as color;
+
+.button {
+  border: none;
+
+  &:hover{
+    background-color: color.$Accent;
+  }
+  
+}
+.smallCircle {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  background-color: color.$Secondary;
+  
+}
+
+.bigCircle {
+
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  background-color: color.$Secondary;
+}
+
+.menu {
+  width: 10rem;
+  height: 5rem;
+}
