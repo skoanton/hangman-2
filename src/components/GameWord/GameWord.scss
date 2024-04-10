@@ -1,0 +1,23 @@
+@use "../../styles/colors" as color;
+
+.Game-word {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    .letter-box {
+        height: 6rem;
+        width: 5rem;
+        background-color: color.$Third;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            color: color.$Text;
+            font-size: 2rem;
+        }
+
+    }
+}

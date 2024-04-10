@@ -1,29 +1,32 @@
 @use "../../styles/colors" as color;
 
-header{
-    
-    .gameview, .menu{
+header {
+
+    .game-view,
+    .menu {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 1rem;
     }
+
     .game-view {
         height: 5rem;
         align-items: center;
         margin-top: 1rem;
-        .left-header, .right-header{
+
+        .left-header,
+        .right-header {
             display: flex;
             align-items: center;
             gap: 5rem;
-    
-            h2{
+
+            h2 {
                 color: color.$Text;
                 font-size: 3rem;
             }
-    
+
         }
     }
-    
-}
 
+}

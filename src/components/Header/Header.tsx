@@ -3,9 +3,9 @@ import "./Header.scss"
 
 const GameViewButtonSVG = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 7H19" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
-        <path d="M5 12H19" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
-        <path d="M5 17H19" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
+        <path d="M5 7H19" stroke="#33363F" strokeWidth="2" strokeLinecap="round" />
+        <path d="M5 12H19" stroke="#33363F" strokeWidth="2" strokeLinecap="round" />
+        <path d="M5 17H19" stroke="#33363F" strokeWidth="2" strokeLinecap="round" />
     </svg>
 );
 
@@ -23,9 +23,9 @@ const Header = ({ gameView }: HeaderProps) => {
     return (
         <header>
             {gameView ? (
-                <article className="gameView">
+                <article className="game-view">
                     <section className="left-header">
-                        <Button smallCircle={false} svg={<GameViewButtonSVG />} />
+                        <Button navigate={true} page="/categoryMenu" smallCircle={false} svg={<GameViewButtonSVG />} />
                         <h2>Category</h2>
                     </section>
                     <section className="right-header">
@@ -34,7 +34,7 @@ const Header = ({ gameView }: HeaderProps) => {
                     </section>
                 </article>) : (
                 <article className="menu">
-                    <Button smallCircle={true} svg={<MenuButtonSVG />} />
+                    <Button navigate={true} page="/" smallCircle={true} svg={<MenuButtonSVG />} />
                     <h2>Pick a Category</h2>
 
                 </article>

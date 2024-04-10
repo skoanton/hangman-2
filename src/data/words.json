@@ -1,0 +1,44 @@
+{
+    "categories": [
+        {
+            "name": "Animals",
+            "words": [
+                "Dog",
+                "Cat",
+                "Elephant",
+                "Lion",
+                "Monkey"
+            ]
+        },
+        {
+            "name": "Fruits",
+            "words": [
+                "Apple",
+                "Banana",
+                "Orange",
+                "Grapes",
+                "Pineapple"
+            ]
+        },
+        {
+            "name": "Colors",
+            "words": [
+                "Red",
+                "Blue",
+                "Green",
+                "Yellow",
+                "Purple"
+            ]
+        },
+        {
+            "name": "Countries",
+            "words": [
+                "USA",
+                "Canada",
+                "Germany",
+                "Japan",
+                "Brazil"
+            ]
+        }
+    ]
+}

@@ -4,11 +4,13 @@
   border: none;
   background-color: color.$Secondary;
   font-size: 1.25rem;
-  &:hover{
+
+  &:hover {
     background-color: color.$Accent;
   }
-  
+
 }
+
 .smallCircle {
   border-radius: 50%;
   height: 2rem;
@@ -18,7 +20,7 @@
   align-items: center;
   transition: all 1s;
 
-  &:hover{
+  &:hover {
     height: 2.5rem;
     width: 2.5rem;
   }
@@ -33,14 +35,22 @@
   align-items: center;
   transition: all 0.5s;
 
-  &:hover{
+  &:hover {
     height: 5.5rem;
     width: 5.5rem;
   }
 }
 
-.menu {
+.buttonMenu {
   border-radius: 10px;
   width: 15rem;
   height: 2.25rem;
+  transition: all 0.5s;
+
+
+
+  &:hover {
+    width: 15.5rem;
+    height: 2.75rem;
+  }
 }

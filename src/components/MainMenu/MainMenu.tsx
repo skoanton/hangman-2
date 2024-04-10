@@ -10,19 +10,14 @@ const PlaySvg = () => (
     </svg>
 )
 
-
 const MainMenu = ({ }: MainMenuProps) => {
-
-    const handelClick = () => {
-
-    }
 
     return (
         <MenuContainer>
             <section className="Main-menu">
                 <h1>THE HANGMAN GAME</h1>
-                <Button onHandleClick={handelClick} svg={<PlaySvg />} />
-                <Button text="how to play" menu={true} />
+                <Button navigate={true} page="categoryMenu" svg={<PlaySvg />} />
+                <Button navigate={false} text="how to play" menu={true} />
             </section>
         </MenuContainer>
 
