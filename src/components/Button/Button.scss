@@ -1,56 +1,52 @@
 @use "../../styles/colors" as color;
-
+@use "../../styles/mixin" as mixin;
 .button {
   border: none;
   background-color: color.$Secondary;
   font-size: 1.25rem;
-
+  box-shadow: 2px 3px 18px 3px rgba(0, 0, 0, 1);
   &:hover {
     background-color: color.$Accent;
+    cursor: pointer;
   }
 
 }
 
 .smallCircle {
   border-radius: 50%;
-  height: 2rem;
-  width: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 1s;
-
-  &:hover {
-    height: 2.5rem;
-    width: 2.5rem;
-  }
-}
-
-.bigCircle {
-  border-radius: 50%;
   height: 5rem;
   width: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.5s;
+  @include mixin.activeTransitionWidthHeight(0.5s);
 
   &:hover {
-    height: 5.5rem;
-    width: 5.5rem;
+   @include mixin.animateHeightWidth(5rem,5rem,0.5rem);
+  }
+}
+
+.bigCircle {
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mixin.activeTransitionWidthHeight(0.5s);
+
+  &:hover {
+    @include mixin.animateHeightWidth(10rem,10rem,0.5rem);
   }
 }
 
 .buttonMenu {
   border-radius: 10px;
-  width: 15rem;
-  height: 2.25rem;
-  transition: all 0.5s;
-
-
+  width: 20rem;
+  height: 5rem;
+  @include mixin.activeTransitionWidthHeight(0.5s);
 
   &:hover {
-    width: 15.5rem;
-    height: 2.75rem;
+   @include mixin.animateHeightWidth(20rem,5rem,0.5rem);
   }
 }

@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import Button from "../Button/Button";
 import "./Header.scss"
+import { WordContext } from "../ProviderContext/WordContext";
 
 const GameViewButtonSVG = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,29 +22,43 @@ type HeaderProps = {
 };
 
 const Header = ({ gameView }: HeaderProps) => {
+
+    const { state } = useContext(WordContext);
+
     return (
-        <header>
+        <>
             {gameView ? (
-                <article className="game-view">
+                <header className="header-game-view">
                     <section className="left-header">
-                        <Button navigate={true} page="/categoryMenu" smallCircle={false} svg={<GameViewButtonSVG />} />
-                        <h2>Category</h2>
+                        <section className="button-section">
+                            <Button navigate={true} page="/categoryMenu" smallCircle={true} svg={<GameViewButtonSVG />} />
+                        </section>
+                        <section className="title-section">
+                            <h2>{state.category}</h2>
+                        </section>
                     </section>
                     <section className="right-header">
-                        <h2>Lifebar----------</h2>
+                        <div className="life-bar">
+                            <div className="progress" style={{ width: `${(state.life / state.maxLife) * 100}%` }}>{state.life}</div>
+                        </div>
                         <h2>❤️</h2>
                     </section>
-                </article>) : (
-                <article className="menu">
-                    <Button navigate={true} page="/" smallCircle={true} svg={<MenuButtonSVG />} />
-                    <h2>Pick a Category</h2>
 
-                </article>
+                </header>) : (
+                <header className="header-menu">
+                    <section className="button-section">
+                        <Button navigate={true} page="/" smallCircle={true} svg={<MenuButtonSVG />} />
+                    </section>
+                    <section className="title-section">
+                        <h2>Pick a Category</h2>
+                    </section>
+
+                </header>
             )
 
             }
 
-        </header>
+        </>
     );
 };
 

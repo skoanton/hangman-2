@@ -1,0 +1,8 @@
+@mixin activeTransitionWidthHeight($time){
+    transition: width $time,height $time;
+}
+
+@mixin animateHeightWidth ($width, $height,$grow) {
+    width: (calc($width + $grow));
+    height: (calc($height + $grow));
+}

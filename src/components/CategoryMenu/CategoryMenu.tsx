@@ -9,9 +9,9 @@ type CategoryMenuProps = {}
 const CategoryMenu = ({ }: CategoryMenuProps) => {
     console.log(data.categories);
     return (
-        <MenuContainer>
+        <>
+            <Header gameView={false}></Header>
             <section className="Category-menu">
-                <Header gameView={false}></Header>
                 <section className="categories">
                     {data.categories.map((category) => {
                         return <Button randomizeWord={true} key={category.name} navigate={true} page="/gameView" menu={true} text={category.name} />
@@ -20,8 +20,8 @@ const CategoryMenu = ({ }: CategoryMenuProps) => {
                 </section>
 
             </section>
+        </>
 
-        </MenuContainer>
     )
 }
 

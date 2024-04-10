@@ -13,14 +13,17 @@ const PlaySvg = () => (
 const MainMenu = ({ }: MainMenuProps) => {
 
     return (
-        <MenuContainer>
+        <>
             <section className="Main-menu">
-                <h1>THE HANGMAN GAME</h1>
-                <Button navigate={true} page="categoryMenu" svg={<PlaySvg />} />
-                <Button navigate={false} text="how to play" menu={true} />
+                <section className="title-section">
+                    <h1>THE HANGMAN GAME</h1>
+                    <Button navigate={true} page="categoryMenu" svg={<PlaySvg />} />
+                </section>
+                <section className="button-section">
+                    <Button navigate={false} text="how to play" menu={true} />
+                </section>
             </section>
-        </MenuContainer>
-
+        </>
     )
 }
 

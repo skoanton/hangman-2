@@ -1,46 +1,44 @@
 @use "../../styles/colors" as color;
-
+@use "../../styles/mixin" as mixin;
 .Keyboard {
+  width: 50%;
+  height: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  .key-section {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
+    justify-content: center;
     gap: 1rem;
-    max-width: 80rem;
-    max-height: max-content;
-    cursor: pointer;
-
+    height: 30%;
     .key-box {
-        background-color: color.$Primary;
-        width: 5rem;
-        height: 6rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 1rem;
-        transition: all 0.8s;
-        color: color.$Text;
-        font-size: 2rem;
-
-
-        &:hover {
-            background-color: color.$Third;
-            height: 6.5rem;
-            width: 5.5rem;
-        }
-
-
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: color.$Primary;
+      width: 5rem;
+      height: 6rem;
+      border-radius: 1rem;
+      @include mixin.activeTransitionWidthHeight(0.2s);
+      color: color.$Text;
+      font-size: 2rem;
+      &:hover {
+        background-color: color.$Third;
+        @include mixin.animateHeightWidth(5rem, 6rem, 0.25rem);
+      }
     }
 
     .clicked {
-        background-color: gray;
-        width: 5rem;
-        height: 6rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 1rem;
-        color: color.$Text;
-        font-size: 2rem;
+      background-color: gray;
+      width: 5rem;
+      height: 6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      color: color.$Text;
+      font-size: 2rem;
+      transition: all 0.2s;
     }
-
-
+  }
 }

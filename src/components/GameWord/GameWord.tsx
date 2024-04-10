@@ -17,7 +17,7 @@ const GameWord = ({ }: GameWordProps) => {
         <section className="Game-word">
             {letterWord.map((letter, index) => {
                 return (<div key={index} className="letter-box">
-                    {state.word.toLowerCase().includes(state.wordGuess.toLowerCase()) && state.wordGuess.includes(letter.toLowerCase()) ? <p id={letter}>{letter.toUpperCase()}</p> :
+                    {state.wordGuess.includes(letter) ? <p id={letter}>{letter.toUpperCase()}</p> :
                         <p id={letter}></p>
                     }
 

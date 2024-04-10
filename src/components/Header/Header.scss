@@ -1,32 +1,67 @@
 @use "../../styles/colors" as color;
 
-header {
+.header-menu,
+.header-game-view {
+  display: flex;
+  height: 10rem;
+  margin-top: 1rem;
 
-    .game-view,
-    .menu {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
+  h2 {
+    color: color.$Text;
+  }
+}
+
+.header-game-view {
+  width: 100%;
+  justify-content: center;
+
+  .left-header,
+  .right-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    h2 {
+      font-size: 3.25rem;
     }
+  }
 
-    .game-view {
-        height: 5rem;
-        align-items: center;
-        margin-top: 1rem;
-
-        .left-header,
-        .right-header {
-            display: flex;
-            align-items: center;
-            gap: 5rem;
-
-            h2 {
-                color: color.$Text;
-                font-size: 3rem;
-            }
-
-        }
+  .left-header {
+    width: 20%;
+    .button-section {
+      width: 30%;
     }
+  }
 
+  .right-header {
+    .life-bar {
+      width: 20rem;
+      height: 2rem;
+      background-color: color.$Primary;
+      display: flex;
+      justify-content: center;
+      .progress {
+        text-align: center;
+        color: color.$Text;
+        background-color: color.$Accent;
+        height: 100%;
+        transition: width 1s;
+      }
+    }
+  }
+}
+
+.header-menu {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  .button-section {
+    height: 90%;
+  }
+  .title-section {
+    h2 {
+      font-size: 2rem;
+    }
+  }
 }
