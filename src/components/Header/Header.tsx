@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "../Button/Button";
 import "./Header.scss"
 import { WordContext } from "../ProviderContext/WordContext";
@@ -24,6 +24,17 @@ type HeaderProps = {
 const Header = ({ gameView }: HeaderProps) => {
 
     const { state } = useContext(WordContext);
+    const [lifeChanged, setLifeChanged] = useState(false);
+    useEffect(() => {
+
+        setLifeChanged(true);
+
+        const timeout = setTimeout(() => {
+            setLifeChanged(false);
+        }, 100);
+
+        return () => clearTimeout(timeout);
+    }, [state.life])
 
     return (
         <>
@@ -38,10 +49,13 @@ const Header = ({ gameView }: HeaderProps) => {
                         </section>
                     </section>
                     <section className="right-header">
-                        <div className="life-bar">
+                        <div className={`life-bar ${lifeChanged ? "life-changed" : ""}`}>
                             <div className="progress" style={{ width: `${(state.life / state.maxLife) * 100}%` }}>{state.life}</div>
                         </div>
-                        <h2>❤️</h2>
+                        <section className="heart-section">
+                            <h2 className={`${lifeChanged ? "life-changed" : ""}`}>❤️</h2>
+                        </section>
+
                     </section>
 
                 </header>) : (

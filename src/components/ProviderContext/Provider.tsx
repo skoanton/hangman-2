@@ -5,7 +5,8 @@ import { useReducer } from "react"
 export const ACTION = {
     RANDOMIZEWORD: "RANDOMIZEWORD",
     ADDTOCURRENTGUEES: "ADDTOCURRENTGUESS",
-    REMOVE_LIFE: "REMOVE_LIFE"
+    REMOVE_LIFE: "REMOVE_LIFE",
+    RESET: "RESET"
 }
 
 export type Action = {
@@ -18,7 +19,8 @@ export type WordState = {
     word: string
     wordGuess: string
     life: number
-    maxLife: number
+    maxLife: number,
+    won: boolean
 }
 
 const randomizeReducer = (state: WordState, action: Action): WordState => {
@@ -33,9 +35,29 @@ const randomizeReducer = (state: WordState, action: Action): WordState => {
             return state;
 
         case ACTION.ADDTOCURRENTGUEES:
-            return { ...state, wordGuess: state.wordGuess + action.payload.toLowerCase() };
+            if (action.payload) {
+                const newCurrentGuess = state.wordGuess + action.payload.toLowerCase();
+
+                const wordArray = Array.from(state.word.toLowerCase());
+                const guessArray = Array.from(newCurrentGuess);
+
+                const allLettersGuessed = wordArray.every((letter) => guessArray.includes(letter));
+
+                if (allLettersGuessed) {
+                    return { ...state, wordGuess: state.wordGuess + action.payload.toLocaleLowerCase(), won: true }
+                }
+                else {
+                    return { ...state, wordGuess: state.wordGuess + action.payload.toLowerCase() };
+                }
+
+
+            }
+
+            return state;
         case ACTION.REMOVE_LIFE:
             return { ...state, life: state.life - 1 }
+        case ACTION.RESET:
+            return initalWordState
         default:
             return state
     }
@@ -46,7 +68,8 @@ export const initalWordState: WordState = {
     word: "",
     wordGuess: "",
     life: 10,
-    maxLife: 10
+    maxLife: 10,
+    won: false
 }
 
 type ProviderProps = {
