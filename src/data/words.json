@@ -39,6 +39,26 @@
                 "Japan",
                 "Brazil"
             ]
+        },
+        {
+            "name": "Vegetables",
+            "words": [
+                "Carrot",
+                "Broccoli",
+                "Tomato",
+                "Potato",
+                "Spinach"
+            ]
+        },
+        {
+            "name": "Sports",
+            "words": [
+                "Football",
+                "Basketball",
+                "Tennis",
+                "Swimming",
+                "Golf"
+            ]
         }
     ]
 }
