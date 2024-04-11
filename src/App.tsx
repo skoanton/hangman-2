@@ -1,8 +1,6 @@
 import Gameview from "./components/GameView/Gameview";
-import CategoryMenu from "./components/CategoryMenu/CategoryMenu"
-import Header from "./components/Header/Header"
-import Keyboard from "./components/Keyboard/Keyboard"
-import MainMenu from "./components/MainMenu/MainMenu"
+import CategoryMenu from "./components/CategoryMenu/CategoryMenu";
+import MainMenu from "./components/MainMenu/MainMenu";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Provider from "./components/ProviderContext/Provider";
 function App() {
@@ -18,7 +16,7 @@ function App() {
         </BrowserRouter>
       </Provider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
